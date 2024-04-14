@@ -1,71 +1,17 @@
-import React, { useState } from 'react'
-import { supabase } from './client'
+import React from 'react'
+import { Login, SignUp } from './pages'
+import { Routes, Route} from 'react-router-dom' 
 
 const App = () => {
-
-  const [formData, setFormData] = useState({
-    name: '', email: '', password: ''
-  })
-
-  console.log(formData)
-
-  function handleChange(event){
-    setFormData((prevFormData)=>{
-      return {
-        ...prevFormData,
-        [event.target.name]:event.target.value
-      }
-    })
-  }
-
-  async function handleSubmit(e){
-    e.preventDefault()
-    try {
-      const{data,error}=await supabase.auth.signUp(
-        {
-          email: formData.email,
-          password: formData.password,
-          options:{data:{name: formData.name}}
-        }
-      )
-      if (error) {
-        throw (error)
-      } else {
-          alert('Compruebe su correo electrónico. Tiene que haber recibido un enlace de verificación')
-        }
-    } catch (error) {
-        alert(error)
-    }
-  }
-
   return (
     <div>
+      <Routes>
+        <Route path={'/signup'} element={<SignUp />}>
+        </Route>
+        <Route path={'/'} element={<Login />}>
+        </Route>
+      </Routes>
 
-      <h1>Caissateca (Alfa)</h1>
-
-      <form onSubmit={handleSubmit}>
-        <input 
-        placeholder='Nombre'
-        name='name'
-        onChange={handleChange}
-        />
-        <input 
-        placeholder='Correo electrónico'
-        name='email'
-        onChange={handleChange}
-        />
-        <input 
-        placeholder='Contraseña'
-        name='password'
-        type='password'
-        onChange={handleChange}
-        />
-
-        <button type='submite' >
-          Enviar
-        </button>
-
-      </form>
     </div>
   )
 }
