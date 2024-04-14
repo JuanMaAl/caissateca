@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { supabase } from './client'
 
 const App = () => {
 
@@ -17,12 +18,32 @@ const App = () => {
     })
   }
 
+  async function handleSubmit(e){
+    e.preventDefault()
+    try {
+      const{data,error}=await supabase.auth.signUp(
+        {
+          email: formData.email,
+          password: formData.password,
+          options:{data:{name: formData.name}}
+        }
+      )
+      if (error) {
+        throw (error)
+      } else {
+          alert('Compruebe su correo electrónico. Tiene que haber recibido un enlace de verificación')
+        }
+    } catch (error) {
+        alert(error)
+    }
+  }
+
   return (
     <div>
 
       <h1>Caissateca (Alfa)</h1>
 
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input 
         placeholder='Nombre'
         name='name'
@@ -36,6 +57,7 @@ const App = () => {
         <input 
         placeholder='Contraseña'
         name='password'
+        type='password'
         onChange={handleChange}
         />
 
@@ -44,10 +66,6 @@ const App = () => {
         </button>
 
       </form>
-
-
-
-
     </div>
   )
 }
