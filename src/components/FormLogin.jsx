@@ -24,28 +24,25 @@ const FormLogin = () => {
       async function handleSubmit(e){
         e.preventDefault()
         try {
-          async function signInWithEmail() {
             const { data, error } = await supabase.auth.signInWithPassword({
               email: formData.email,
               password: formData.password,
             })
-          }
-          if (error) {
-            console.log(data)
-            throw (error)
-          }
-        } catch (error) {
+          if (error) throw (error)
+          console.log(data)
+        }catch (error) {
             alert(error)
-        }
-      }
+         }}
+          
 
       return (
     <form onSubmit={handleSubmit}>
-    <BasicInput placeholder={"Nombre"} name={"name"} onChange={handleChange} />
     <BasicInput placeholder={"Correo Electrónico"} name={"email"} onChange={handleChange} />
+    <BasicInput placeholder={"Contraseña"} name={"password"} type={"password"} onChange={handleChange} />
     <ButtonSubmit />
   </form>
   )
 }
+
 
 export default FormLogin
