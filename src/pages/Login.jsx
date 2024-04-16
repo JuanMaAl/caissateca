@@ -1,8 +1,15 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+import FormLogin from '../components/FormLogin'
+
 
 const Login = () => {
+
   return (
-    <div>Login</div>
+    <div>
+      <h1>Caissateca (Desarollo)</h1>
+      <FormLogin />
+      ¿Aún no tienes una cuenta? <Link to='/SignUp'>Crear una Nueva Cuenta</Link>
+    </div>
   )
 }
 
