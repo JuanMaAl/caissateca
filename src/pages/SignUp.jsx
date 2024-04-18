@@ -5,10 +5,8 @@ import FormSignUp from '../components/FormSignUp'
 const SignUp = () => {
 
   return (
-    <div>
-      <h1>Caissateca (Desarollo)</h1>
+    <div className="grid justify-items-center pt-20">
       <FormSignUp />
-      ¿Ya tienes una cuenta? <Link to='/'>Entrar</Link>
     </div>
   )
 }
