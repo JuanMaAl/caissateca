@@ -1,10 +1,13 @@
 import React from 'react'
 import ButtonSubmit from './ButtonSubmit'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { supabase } from '../client'
 import BasicInput from './BasicInput'
+import {useNavigate} from 'react-router-dom'
 
-const FormLogin = () => { 
+const FormLogin = ({setToken}) => { 
+
+  let navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     email: '', password: ''
@@ -30,11 +33,13 @@ const FormLogin = () => {
             })
           if (error) throw (error)
           console.log(data)
+          setToken(data)
+          navigate('/homepage')
+
         }catch (error) {
             alert(error)
          }}
           
-
       return (
     <form onSubmit={handleSubmit}>
     <BasicInput placeholder={"Correo Electrónico"} name={"email"} onChange={handleChange} />
