@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { supabase } from '../client'
-import ButtonSubmit from './ButtonSubmit'
+import BasicButton from './BasicButton'
 import BasicInput from './BasicInput'
 
 const FormLogin = () => {
@@ -44,9 +44,12 @@ const FormLogin = () => {
       return (
     <form onSubmit={handleSubmit}>
     <BasicInput placeholder={"Nombre"} name={"name"} onChange={handleChange} />
+    <br />
     <BasicInput placeholder={"Correo Electrónico"} name={"email"} onChange={handleChange} />
+    <br />
     <BasicInput placeholder={"Contraseña"} name={"password"} type={"password"} onChange={handleChange} />
-    <ButtonSubmit />
+    <br />
+    <BasicButton type={"Submit"} text={"Enviar"}/>
   </form>
   )
 }
