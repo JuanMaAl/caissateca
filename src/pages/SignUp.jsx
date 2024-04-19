@@ -5,7 +5,7 @@ import FormSignUp from '../components/FormSignUp'
 const SignUp = () => {
 
   return (
-    <div className="grid justify-items-center pt-20">
+    <div className="grid justify-items-center pt-20 h-full">
       <FormSignUp />
     </div>
   )

@@ -18,7 +18,7 @@ useEffect(()=>{
 }, [])
 
   return (
-    <div>
+    <div className=" h-2/3">
       <Routes>
         <Route path={'/signup'} element={<SignUp />} />
         <Route path={'/'} element={<Login setToken={setToken} />} />

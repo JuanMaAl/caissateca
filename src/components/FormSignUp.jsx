@@ -45,30 +45,32 @@ const FormLogin = () => {
       }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-gradient-to-r from-orange-200 to-orange-500 shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
-    <div className="grid justify-items-center space-y-3">
-    <h1 className="text-4xl font-bold">Caissateca</h1>
-      <BasicInput placeholder={"Nombre"} name={"name"} onChange={handleChange} />
-      <br />
-      <BasicInput placeholder={"Correo Electrónico"} name={"email"} onChange={handleChange} />
-      <br />
-      <BasicInput placeholder={"Contraseña"} name={"password"} type={"password"} onChange={handleChange} />
-      <br />
-      <BasicInput placeholder={"Repita contraseña"} name={"password2"} type={"password"} onChange={handleChange} />
-      <br />
-      <div className="grid justify-items-center">
-        <BasicButton type={"Submit"} text={"Enviar"}
-        className={"bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"}
-       />
-       </div>
-       <br />
-    <p>
-      ¿Ya tienes una cuenta? <Link to='/'
-      className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-        Entrar
-      </Link>
-    </p>
-    </div>
+    <form onSubmit={handleSubmit} className="bg-hero shadow-md rounded-full px-8 pt-6 pb-8 mb-4 w-2/6">
+      <div className="grid justify-items-center space-y-10 pt-5">
+        <h2 className="text-4xl font-bold text-white bg-pink-500 rounded-md p-2">Caissateca</h2>
+        <div className="grid justify-items-center space-y-3">
+          <BasicInput placeholder={"Nombre"} name={"name"} onChange={handleChange} />
+          <br />
+          <BasicInput placeholder={"Correo Electrónico"} name={"email"} onChange={handleChange} />
+          <br />
+          <BasicInput placeholder={"Contraseña"} name={"password"} type={"password"} onChange={handleChange} />
+          <br />
+          <BasicInput placeholder={"Repita contraseña"} name={"password2"} type={"password"} onChange={handleChange} />
+          <br />
+          <div className="grid justify-items-center">
+            <BasicButton type={"Submit"} text={"Enviar"}
+            className={"bg-pink-500 hover:bg-pink-400 text-white font-bold py-2 px-4 border-b-4 border-pink-700 hover:border-pink-500 rounded"}
+            />
+          </div>
+          <p className="text-white bg-pink-500 rounded-md p-2">
+            ¿Ya tienes una cuenta? <Link to='/'
+            className="font-bold text-green-300 dark:text-green-500 hover:underline">
+              Entrar
+            </Link>
+          </p>
+        </div>
+
+      </div>
     </form>
   )
 }
