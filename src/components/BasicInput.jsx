@@ -8,7 +8,7 @@ const BasicInput = (props) => {
     name={props.name}
     type={props.type}
     onChange={props.onChange}
-    className="px-2 bg-orange-200 rounded-md"
+    className="px-2 bg-pink-200 rounded-md text-white focus:placeholder-pink-400"
     />
   )
 }
