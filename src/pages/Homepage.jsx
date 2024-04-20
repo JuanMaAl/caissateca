@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import { supabase } from '../client'
-import BasicTh from '../components/BasicTh'
+import BasicTd from '../components/BasicTd'
+import BasicThead from '../components/BasicThead'
 
 const Homepage = ({token}) => {
 
@@ -15,7 +16,8 @@ const Homepage = ({token}) => {
   async function fetchCollection(){
     const{data} = await supabase
       .from('collection')
-      .select('*')
+      .select()
+      .eq('usuario', token.user.user_metadata.name)
       setCollection(data)
       console.log(data)
   }
@@ -24,17 +26,18 @@ const Homepage = ({token}) => {
     <div className="grid justify-items-center">
       <Header token={token}/>
       <table className="table-auto border-4 border-pink-400 m-10 border-collapse max-w-4xl w-full">
-        <thead>
-          <tr className="border-4 border-pink-400">
-            <BasicTh text={"Id"}/>
-            <BasicTh text={"Usuario"}/>
-            <BasicTh text={"Título"}/>
-            <BasicTh text={"Editorial"}/>
-            <BasicTh text={"Autor"}/>
-            <BasicTh text={"Tema"}/>
-          </tr>
-        </thead>
+        <BasicThead />
         <tbody>
+            { collection.map((libro, key)=>
+                <tr key={key}>
+                  {/* <BasicTd text={libro.id}/> */}
+                  {/* <BasicTd text={libro.usuario} /> */}
+                  <BasicTd text={libro.titulo} />
+                  <BasicTd text={libro.editorial} />
+                  <BasicTd text={libro.autor} />
+                  <BasicTd text={libro.tema} />
+                </tr>
+              )}
         </tbody>
       </table>
     </div>
