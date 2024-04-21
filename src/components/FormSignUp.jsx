@@ -4,8 +4,11 @@ import { supabase } from '../client'
 import BasicButton from './BasicButton'
 import BasicInput from './BasicInput'
 import { Link } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const FormLogin = () => {
+
+  let navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     name: '', email: '', password: '', password2:''
@@ -37,11 +40,15 @@ const FormLogin = () => {
             throw (error)
           } else {
               alert('Compruebe su correo electrónico. Tiene que haber recibido un enlace de verificación')
+              navigate('/login')
             }
         } catch (error) {
             alert(error)
         }
-        }else{alert("Las contraseñas no son iguales")}
+        }else{
+          alert("Las contraseñas no son iguales")
+          navigate('/signup')
+        }
       }
 
   return (
