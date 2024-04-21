@@ -1,26 +1,39 @@
-import create from zustand
+import axios from "axios"
+import {create} from "zustand"
 
-export const useAuthStore = create ((set) => ({
-    user: null,
-    setUser: user => set({user}),
-    signIn: async(email, password)=> {
-        const {user, error} = await supabase.auth.signIn({email, password})
-        if (error) {
-            throw error
+const initialState = {
+    loading: false,
+    succes: false,
+    error: false,
+    data: null,
+    errorData: null,
+}
+
+const useGetData = create ((set, get) => ({
+    ...initialState,
+
+    execute: async () => {
+        set({...initialState, loading: true})
+        try {
+            const res = await axios.get("")
+            set(
+                {...initialState, 
+                    succes: true, 
+                    data: res.data
+                }
+            )
+        } catch (err) {
+            console.error("Error in data fetch:", err)
+            set(
+                {...initialState,
+                    error: true,
+                    errorData: err.message
+                }
+            )
         }
-        set({user}) 
-    },
-    signOut: async()=> {
-        const {error} = await supabase.auth.signOut()
-        if (error) {
-            throw error
-        }
-        set({user: null})
-    },
+    }
+
 
 }))
 
-
-// const [formData, setFormData] = useState({
-//     email: '', password: ''
-//   })
+export default useGetData
