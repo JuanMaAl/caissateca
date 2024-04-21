@@ -3,9 +3,16 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../../client'
 import BasicTd from './BasicTd'
 import BasicButton from '../BasicButton'
+import {useNavigate} from 'react-router-dom'
 
 
 const BasicTbody = ({token}) => {
+
+  let navigate = useNavigate()
+
+  function handleClick(){
+    navigate('/addbook')
+  }
 
     const [collection, setCollection] = useState([])
 
@@ -44,7 +51,7 @@ const BasicTbody = ({token}) => {
         <tr key={key}>
           <BasicTd text={libro.titulo} />
           <td className=" pt-2.5 space-x-10">
-            <BasicButton text={eyeButton}/>
+            <BasicButton text={eyeButton} onClick={handleClick}/>
             <BasicButton text={updateButton}/>
             <BasicButton text={removeButton}/>
           </td>
