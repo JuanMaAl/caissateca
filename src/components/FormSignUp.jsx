@@ -52,7 +52,7 @@ const FormLogin = () => {
       }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-hero shadow-md rounded-full px-8 pt-6 pb-8 mb-4 w-2/6">
+    <form onSubmit={handleSubmit} className="bg-hero rounded-full px-10 pt-6 pb-8 mb-4 w-11/12 min-w-52 align-middle">
       <div className="grid justify-items-center space-y-10 pt-5">
         <h2 className="text-4xl font-bold text-white bg-pink-500 rounded-md p-2">Caissateca</h2>
         <div className="grid justify-items-center space-y-3">
@@ -69,7 +69,7 @@ const FormLogin = () => {
             className={"bg-pink-500 hover:bg-pink-400 text-white font-bold py-2 px-4 border-b-4 border-pink-700 hover:border-pink-500 rounded"}
             />
           </div>
-          <p className="text-white bg-pink-500 rounded-md p-2">
+          <p className="text-white bg-pink-500 rounded-md p-2 grid justify-items-center">
             ¿Ya tienes una cuenta? <Link to='/'
             className="font-bold text-green-300 dark:text-green-500 hover:underline">
               Entrar
