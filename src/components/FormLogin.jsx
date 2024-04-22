@@ -5,10 +5,12 @@ import { supabase } from '../client'
 import BasicInput from './BasicInput'
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import BearCounter from './zustandTest/BearCounter'
 import { useStore } from '../store/testStore'
-import BearControl from './zustandTest/BearControl'
 import { useTokenStore } from '../store/tokenStore'
+import { useCollectionStore } from '../store/collectionStore'
+
+useCollectionStore.setState( {collection: [],})
+useTokenStore.setState({name: "", idUser: "",})
 
 const FormLogin = ({setToken}) => { 
 
@@ -27,7 +29,7 @@ const FormLogin = ({setToken}) => {
     })
   }
 
-  console.log(formData)
+  //console.log(formData)
 
       async function handleSubmit(e){
         e.preventDefault()
@@ -37,7 +39,7 @@ const FormLogin = ({setToken}) => {
               password: formData.password,
             })
           if (error) throw (error)
-          console.log(data)
+          //console.log(data)
           setToken(data)
           navigate('/homepage')
 
@@ -52,7 +54,7 @@ const FormLogin = ({setToken}) => {
 
     return (
       <>
-      <form onSubmit={handleSubmit} className="bg-hero shadow-md rounded-full px-8 pt-6 pb-8 mb-4 w-1/3 align-middle">
+      <form onSubmit={handleSubmit} className="bg-hero rounded-full px-10 pt-6 pb-8 mb-4 w-11/12 min-w-52 align-middle">
         <div className="grid justify-items-center space-y-20 pt-5">
         <h1 className="text-4xl font-bold text-white bg-pink-500 rounded-md p-2">Caissateca</h1>
           <div className="grid justify-items-center space-y-3">
@@ -66,8 +68,8 @@ const FormLogin = ({setToken}) => {
               />
             </div>
             <br />
-            <p className="text-white bg-pink-500 rounded-md p-2">
-              ¿No tienes una cuenta? <Link to='/SignUp'
+            <p className="text-white bg-pink-500 rounded-md p-2 grid justify-items-center">
+              ¿No tienes cuenta? <br /><Link to='/SignUp'
               className="font-bold text-green-300 dark:text-green-500 hover:underline">
                 Nueva Cuenta
               </Link>
