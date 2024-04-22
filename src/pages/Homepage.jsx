@@ -4,10 +4,14 @@ import BasicThead from '../components/tables/BasicThead'
 import BasicTbody from '../components/tables/BasicTbody'
 import BasicButton from '../components/BasicButton'
 import {useNavigate} from 'react-router-dom'
+import { useTokenStore } from '../store/tokenStore'
+
 
 const Homepage = ({token}) => {
 
   let navigate = useNavigate()
+
+  useTokenStore.setState( {name: token.user.user_metadata.name})
 
   function handleClick(){
     navigate('/addbook')
@@ -30,6 +34,7 @@ const Homepage = ({token}) => {
       <BasicButton text={addButton} onClick={handleClick}/>
         {addButtonText}</p>
     </div>
+
   )
 }
 
