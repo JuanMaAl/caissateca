@@ -41,8 +41,8 @@ console.log(books)
     <tbody>
     { books.map((libro, key)=>
         <tr key={key}>
-          <BasicTd text={libro.titulo} />
-          <td className=" pt-2.5 space-x-10">
+          <BasicTd text={libro.titulo} estilos={"border-4 border-pink-400"} />
+          <td className=" pt-2.5 space-x-3">
             <BasicButton text={eyeButton} onClick={handleClick}/>
             <BasicButton text={updateButton}/>
             <BasicButton text={removeButton}/>

@@ -4,7 +4,7 @@ import BasicButton from '../components/BasicButton'
 import { useTokenStore } from '../store/tokenStore'
 import { useCollectionStore } from '../store/collectionStore'
 
-const Header = () => {
+const Header = (props) => {
 
     let navigate = useNavigate()
 
@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header className=" bg-pink-500 w-full px-5 space-x-3 py-2">
       <div className="flex justify-center space-x-4">
-        <h3 className="text-2xl text-white mt-1" >Caissateca App</h3>
+        <h3 className="text-2xl text-white mt-1" >Caissateca: {props.lugar}</h3>
       </div>
       <div className="flex justify-center space-x-4">
         <h3 className="text-2xl text-white mt-1">{userName}</h3> 
