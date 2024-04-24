@@ -41,7 +41,7 @@ const FormLogin = ({setToken}) => {
           if (error) throw (error)
           //console.log(data)
           setToken(data)
-          navigate('/homepage')
+          navigate('/loadingpage')
 
         }catch (error) {
             alert(error)

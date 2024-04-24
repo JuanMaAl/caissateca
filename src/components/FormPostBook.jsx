@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { usePostCollection } from '../hooks/usePostCollection';
+import { useCreateCollection } from '../hooks/useCreateCollection';
 
 
 
@@ -14,7 +14,7 @@ export default function FormPostBook() {
     let autorLibro = data.autor
     let temaLibro = data.tema
 
-    usePostCollection(tituloLibro, editorialLibro, autorLibro, temaLibro)
+    useCreateCollection(tituloLibro, editorialLibro, autorLibro, temaLibro)
   }
   
   return (

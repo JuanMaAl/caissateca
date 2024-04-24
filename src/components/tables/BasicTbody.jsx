@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import BasicTd from './BasicTd'
 import BasicButton from '../BasicButton'
 import {useNavigate} from 'react-router-dom'
-import { useFetchCollection } from '../../hooks/useCollection'
+import { useReadCollection } from '../../hooks/useReadCollection'
 import { useCollectionStore } from '../../store/collectionStore'
 
 
@@ -12,11 +12,11 @@ const BasicTbody = () => {
   let navigate = useNavigate()
 
   function handleClick(){
-    navigate('/addbook')
+    navigate('/bookview')
   }
 
     useEffect(() => {
-      useFetchCollection()
+      useReadCollection()
     }, [])
 
     const eyeButton = (<svg className="w-6 h-6 text-purple-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -40,13 +40,11 @@ console.log(books)
   return (
     <tbody>
     { books.map((libro, key)=>
-        <tr key={key}>
+        <tr key={key} className="flex justify-start">
+          <BasicButton text={eyeButton} onClick={handleClick}/>
           <BasicTd text={libro.titulo} estilos={"border-4 border-pink-400"} />
-          <td className=" pt-2.5 space-x-3">
-            <BasicButton text={eyeButton} onClick={handleClick}/>
-            <BasicButton text={updateButton}/>
-            <BasicButton text={removeButton}/>
-          </td>
+            {/* <BasicButton text={updateButton}/>
+            <BasicButton text={removeButton}/> */}
         </tr>
       )}
    </tbody>
