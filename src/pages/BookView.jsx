@@ -1,14 +1,22 @@
 import React from 'react'
-import Header from '../components/Header'
+import BookViewTable from '../components/tables/BookViewTable'
+import { useBookViewStore } from '../store/bookViewStore'
+
+
 
 const BookView = ({token}) => {
-  return (
-    <div>
-        <Header token={token} lugar={"Vista Detallada"} />
-        <div>BookView</div>
-    </div>
 
+  const saludo = useBookViewStore.getState().bookId
+
+
+  return (
+    // <>
+    // <Header />
+    // <BookViewTable />
+    // </>
+    <p>Hola BookId: {saludo}</p>
   )
 }
+
 
 export default BookView

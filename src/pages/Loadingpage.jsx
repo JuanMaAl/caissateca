@@ -22,7 +22,7 @@ const Loadingpage = ({token}) => {
 
   setTimeout(function(){
     handleClick();
-}, 2000);
+}, 500);
 
   return (
     <div className="grid justify-items-center">

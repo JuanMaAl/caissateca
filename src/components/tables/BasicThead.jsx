@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BasicTh from './BasicTh'
 import BasicButton from '../BasicButton'
 import {useNavigate} from "react-router-dom"
@@ -17,9 +17,11 @@ const BasicThead = () => {
 
   return (
       <thead>
-        <tr className="flex justify-start">
-          <BasicButton text={addButton} onClick={handleClick}/>
-          <BasicTh text={"Títulos"}/>
+        <tr className="flex justify-center">
+          <th>          
+            <BasicButton text={addButton} onClick={handleClick}/>
+          </th>
+          <BasicTh text={"Títulos"}/> 
         </tr>
       </thead>
   )
