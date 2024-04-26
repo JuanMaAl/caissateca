@@ -8,7 +8,7 @@ const Homepage = ({token}) => {
   return (
     <div className="grid justify-items-center">
       <Header token={token} lugar={"Home"}/>
-      <table className="table-auto border-4 border-pink-800 mt-10 mb-4 border-collapse max-w-md w-11/12">
+      <table className="table-auto mt-10 mb-4 border-collapse max-w-md w-11/12 bg-pink-200 border border-gray-200 rounded-lg shadow">
         <BasicThead />
         <BasicTbody token={token}/>
       </table>
