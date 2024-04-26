@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Header from '../components/Header'
-import BasicThead from '../components/tables/BasicThead'
 import BasicTbody from '../components/tables/BasicTbody'
 import {useNavigate} from 'react-router-dom'
 import { useTokenStore } from '../store/tokenStore'

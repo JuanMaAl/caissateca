@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import BasicTh from './BasicTh'
 import BasicButton from '../BasicButton'
 import {useNavigate} from "react-router-dom"

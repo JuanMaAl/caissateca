@@ -19,18 +19,11 @@ const AddBook = ({token}) => {
   const addButtonText = "Mostrar Contenido"
 
   return (
-    <div className="grid justify-items-center">
-      <Header token={token} lugar={"Añadir Libro"}/>
-      <div className="mt-20">
+    <div className="grid justify-items-center space-y-8">
+      <Header token={token} lugar={"Añadir"}/>
+      <div>
         <FormPostBook />
       </div>
-      
-      <div>
-        <p className="flex justify-normal text-blue-800 font-extrabold mt-5">
-        <BasicButton text={addButton} onClick={handleClick}/>
-          {addButtonText}</p>
-      </div>
-
     </div>
   )
 }

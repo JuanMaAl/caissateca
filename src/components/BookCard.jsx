@@ -1,27 +1,37 @@
 import React from 'react'
+import BasicButton from './BasicButton'
+import {useNavigate} from 'react-router-dom'
+import { useDeleteBook } from '../hooks/useDeleteBook '
+import { useBookViewStore } from '../store/bookViewStore'
 
-function BookCard() {
+function BookCard(props) {
+
+  let navigate = useNavigate()
+
+  async function deleteBook() {
+    const bookId = useBookViewStore.getState().bookId
+    useDeleteBook(bookId)
+    navigate("/homepage")
+    }
+
   return (
+    <div className="max-w-sm bg-pink-200 border border-gray-200 rounded-lg shadow mt-10">
+      <div className="p-5">
 
-<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-10">
-    <a href="#">
-        <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div className="p-5">
-        <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" className=" inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-pink-900 dark:text-white">{props.titulo}</h5>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Editorial: {props.editorial}</p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Autor: {props.autor}</p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Tema: {props.tema}</p>
+          <p className="flex justify-center space-x-3">
+            <BasicButton type={"Button"} text={"Actualizar"} 
+            className={"bg-blue-500 hover:bg-blue-400 text-white text-center font-bold py-1 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded h-8 mt-1.5 "}
+            />
+            <BasicButton type={"Button"} text={"Eliminar"} onClick={deleteBook}
+            className={"bg-red-500 hover:bg-red-400 text-white text-center font-bold py-1 px-4 border-b-4 border-red-700 hover:border-red-500 rounded h-8 mt-1.5 "}
+            />
+          </p>
+      </div>
     </div>
-</div>
-
-
   )
 }
 
