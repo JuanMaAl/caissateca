@@ -5,7 +5,6 @@ import { supabase } from '../client'
 import BasicInput from './BasicInput'
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { useStore } from '../store/testStore'
 import { useTokenStore } from '../store/tokenStore'
 import { useCollectionStore } from '../store/collectionStore'
 
@@ -46,11 +45,6 @@ const FormLogin = ({setToken}) => {
         }catch (error) {
             alert(error)
          }}
-
-         function BearCounter() {
-          const bears = useStore((state) => state.bears)
-          return <h1>{bears} around here...</h1>
-        }
 
     return (
       <>

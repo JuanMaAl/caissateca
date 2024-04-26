@@ -1,7 +1,6 @@
 import React from 'react'
 import BasicTd from './BasicTd'
 import BasicButton from '../BasicButton'
-import {useNavigate} from 'react-router-dom'
 import { useBookViewStore } from '../../store/bookViewStore'
 import BasicTh from './BasicTh'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useBookViewStore } from '../store/bookViewStore'
 import BookCard from '../components/BookCard'
 import Header from '../components/Header'
@@ -8,23 +8,36 @@ import {useReadBook} from '../hooks/useReadBook'
 
 const BookView = ({token}) => {
 
-  const bookId = useBookViewStore.getState().bookId
-  useReadBook(bookId)
-  const bookData = useBookViewStore.getState().book
-  const bookDataObject = bookData[0]
-  console.log (bookData)
-  console.log(bookDataObject)
-  const id = bookDataObject.id
-  
+  let nameBook = "cargando"
 
+  async function obtainBookDataObject() {
+    const bookId = useBookViewStore.getState().bookId
+    await useReadBook(bookId)
+    const bookData = useBookViewStore.getState().book
+    setTitulo(bookData[0].titulo)
+    setEditorial(bookData[0].editorial)
+    setAutor(bookData[0].autor)
+    setTema(bookData[0].tema)
+  }
+
+ let [titulo, setTitulo] = useState("cargando")
+ let [editorial, setEditorial] = useState("cargando")
+ let [autor, setAutor] = useState("cargando")
+ let [tema, setTema] = useState("cargando")
+
+  obtainBookDataObject()
 
   return (
     <>
-    <Header lugar={"Vista Detallada"}/>
+    <Header lugar={"Libro"}/>
     <div className="flex justify-center">
-      <BookCard />
+      <BookCard 
+        titulo={titulo} 
+        editorial={editorial}
+        autor={autor}
+        tema={tema}
+      />
     </div>
-    <p>Hola BookId: {id}</p>
     </>
   )
 }
