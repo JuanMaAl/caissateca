@@ -22,6 +22,10 @@ const Header = (props) => {
       navigate('/homepage')
     }
 
+    function handleAddBook(){
+      navigate('/addbook')
+    }
+
 
 
   return (
@@ -32,6 +36,9 @@ const Header = (props) => {
       <div className="flex justify-center space-x-4">
         <BasicButton type={"Button"} text={"Home"} onClick={handleHome} 
         className={"bg-blue-500 hover:bg-blue-400 text-white text-center font-bold py-1 px-4 border-b-4 border-blue-900 hover:border-blue-500 rounded h-8 mt-1.5 "}
+        />
+        <BasicButton type={"Button"} text={"Añadir"} onClick={handleAddBook} 
+        className={"bg-green-500 hover:bg-green-400 text-white text-center font-bold py-1 px-4 border-b-4 border-green-900 hover:border-green-500 rounded h-8 mt-1.5 "}
         />
         <BasicButton type={"Button"} text={"Salir"} onClick={handleLogout} 
         className={"bg-red-700 hover:bg-red-400 text-white text-center font-bold py-1 px-4 border-b-4 border-red-900 hover:border-red-500 rounded h-8 mt-1.5 "}
