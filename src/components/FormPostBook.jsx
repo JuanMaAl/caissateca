@@ -1,8 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useCreateCollection } from '../hooks/useCreateCollection';
-
-
+import { Link } from 'react-router-dom';
 
 export default function FormPostBook() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -13,17 +12,18 @@ export default function FormPostBook() {
     let editorialLibro = data.editorial
     let autorLibro = data.autor
     let temaLibro = data.tema
-
     useCreateCollection(tituloLibro, editorialLibro, autorLibro, temaLibro)
   }
-  
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input className="px-2 mt-3 bg-pink-200 rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="titulo" {...register("titulo", {required: true, min: 4, maxLength: 32})} />
+    <form onSubmit={handleSubmit(onSubmit)} 
+    className="max-w-sm bg-pink-200 border border-gray-200 rounded-lg shadow mt-10 px-3">
+      <h3 className="p-2 text-2xl text-pink-800 font-extrabold underline">Formulario: Nuevo Libro</h3>
+      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="titulo" {...register("titulo", {required: true, min: 4, maxLength: 32})} />
       <br />
-      <input className="px-2 mt-3 bg-pink-200 rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="editorial" {...register("editorial", {required: true, min: 4, maxLength: 32})} />
+      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="editorial" {...register("editorial", {required: true, min: 4, maxLength: 32})} />
       <br />
-      <input className="px-2 my-3 bg-pink-200 rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="autor" {...register("autor", {required: true, min: 4, maxLength: 32})} />
+      <input className="px-2 my-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="autor" {...register("autor", {required: true, min: 4, maxLength: 32})} />
       <br />
       <select {...register("tema", { required: true })}>
         <option value="Aperturas">Aperturas</option>
@@ -37,7 +37,7 @@ export default function FormPostBook() {
         <option value=" Otros"> Otros</option>
       </select>
       <br />
-      <input type="submit" className="bg-pink-500 hover:bg-pink-400 text-white font-bold my-3 py-2 px-4 border-b-4 border-pink-700 hover:border-pink-500 rounded" />
+      <Link to='../homepage'><input value="Añadir" type="submit" className="bg-green-500 hover:bg-green-400 text-white font-bold my-3 py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded" /></Link>
     </form>
   );
 }
