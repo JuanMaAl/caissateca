@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import BasicThead from '../components/tables/BasicThead'
 import BasicTbody from '../components/tables/BasicTbody'
+import { useTokenStore } from '../store/tokenStore'
 
 const Homepage = ({token}) => {
+
+  useTokenStore.setState( {name: token.user.user_metadata.name})
+  useTokenStore.setState( {idUser: token.user.id})
 
   return (
     <div className="grid justify-items-center">

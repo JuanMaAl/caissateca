@@ -10,7 +10,7 @@ const BookView = ({token}) => {
 
   let nameBook = "cargando"
 
-  async function obtainBookDataObject() {
+  async function obtainBookData() {
     const bookId = useBookViewStore.getState().bookId
     await useReadBook(bookId)
     const bookData = useBookViewStore.getState().book
@@ -25,7 +25,7 @@ const BookView = ({token}) => {
  let [autor, setAutor] = useState("cargando")
  let [tema, setTema] = useState("cargando")
 
-  obtainBookDataObject()
+  obtainBookData()
 
   return (
     <>
