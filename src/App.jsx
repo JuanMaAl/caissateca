@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Login, SignUp, Homepage, AddBook, BookView, } from './pages'
+import { Login, SignUp, Homepage, AddBook, BookView, UpdateBook } from './pages'
 import { Routes, Route} from 'react-router-dom'
 
 const App = () => {
@@ -25,6 +25,7 @@ useEffect(()=>{
         {token?<Route path={'/homepage'} element={<Homepage token={token} />} />:""}
         {token?<Route path={'/addbook'} element={<AddBook token={token} />} />:""}
         {token?<Route path={'/bookview'} element={<BookView token={token} />} />:""}
+        {token?<Route path={'/updatebook'} element={<UpdateBook token={token} />} />:""}
       </Routes>
 
     </div>

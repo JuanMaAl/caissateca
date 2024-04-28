@@ -2,7 +2,7 @@ import api from '../api/supabase'
 import { useTokenStore } from '../store/tokenStore';
 
 
-export async function useCreateCollection(titulo, editorial, autor, tema){
+export async function useCreateBook(titulo, editorial, autor, tema){
     const userId = useTokenStore.getState().idUser
     console.log(userId)
 

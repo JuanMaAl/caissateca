@@ -3,7 +3,8 @@ import SignUp from './SignUp'
 import Homepage from './Homepage'
 import AddBook from './AddBook'
 import BookView from './BookView'
+import UpdateBook from './UpdateBook'
 
 export{
-    Login, SignUp, Homepage, AddBook, BookView,
+    Login, SignUp, Homepage, AddBook, BookView, UpdateBook,
 }
