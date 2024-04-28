@@ -8,11 +8,16 @@ function BookCard(props) {
 
   let navigate = useNavigate()
 
+  function updateBook() {
+    navigate("/updatebook")
+  }
+
   async function deleteBook() {
     const bookId = useBookViewStore.getState().bookId
     useDeleteBook(bookId)
     navigate("/homepage")
     }
+
 
   return (
     <div className="max-w-sm bg-pink-200 border border-gray-200 rounded-lg shadow mt-10">
@@ -23,7 +28,7 @@ function BookCard(props) {
           <p className="mb-3 font-normal text-pink-600 dark:text-gray-400">Autor: {props.autor}</p>
           <p className="mb-3 font-normal text-pink-600 dark:text-gray-400">Tema: {props.tema}</p>
           <p className="flex justify-center space-x-3">
-            <BasicButton type={"Button"} text={"Actualizar"} 
+            <BasicButton type={"Button"} text={"Editar"} onClick={updateBook}
             className={"bg-green-500 hover:bg-green-400 text-white text-center font-bold py-1 px-4 border-b-4 border-green-700 hover:border-green-500 rounded h-8 mt-1.5 "}
             />
             <BasicButton type={"Button"} text={"Eliminar"} onClick={deleteBook}

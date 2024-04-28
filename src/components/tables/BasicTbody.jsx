@@ -21,7 +21,7 @@ const BasicTbody = () => {
   return (
     <tbody>
     { collection.map((libro, key)=>
-        <tr key={key} className="flex justify-start">
+        <tr key={key} className="flex justify-start m-2">
           <td>
             <ViewButton libroId = {libro.id} />
           </td>
