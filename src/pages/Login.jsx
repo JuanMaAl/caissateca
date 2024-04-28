@@ -1,5 +1,6 @@
 import FormLogin from '../components/FormLogin'
 
+//Vista de la página de acceso
 
 const Login = ({setToken}) => {
 

@@ -6,6 +6,9 @@ import BasicInput from './BasicInput'
 import { Link } from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 
+// Incluye el formulario de registro y las funciones necesarias para enviar
+// los datos de registro a la BBDD (supabase)
+
 const FormLogin = () => {
 
   let navigate = useNavigate()

@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom'
 import { useTokenStore } from '../store/tokenStore'
 import { useCollectionStore } from '../store/collectionStore'
 
+// Incluye el formulario de acceso y las funciones necesarias para enviar
+// los datos de login a la BBDD (supabase)
+
 useCollectionStore.setState( {collection: [],})
 useTokenStore.setState({name: "", idUser: "",})
 

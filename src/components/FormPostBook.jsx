@@ -3,14 +3,15 @@ import { useForm } from 'react-hook-form';
 import { useCreateBook } from '../hooks/useCreateBook';
 import {useNavigate} from 'react-router-dom'
 
-
+//Incluye el formulario para crear un nuevo libro y lanza
+// el hook useCreateBook pasandole los valores pertinentes
 
 export default function FormPostBook() {
   let navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    console.log(data);
-    console.log(errors);
+    //console.log(data);
+    //console.log(errors);
     let tituloLibro = data.titulo
     let editorialLibro = data.editorial
     let autorLibro = data.autor

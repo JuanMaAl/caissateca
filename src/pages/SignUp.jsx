@@ -1,5 +1,6 @@
 import FormSignUp from '../components/FormSignUp'
 
+//Vista de la página de registro
 
 const SignUp = () => {
 

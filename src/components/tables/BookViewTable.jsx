@@ -3,6 +3,8 @@ import BasicButton from '../BasicButton'
 import { useBookViewStore } from '../../store/bookViewStore'
 import BasicTh from './BasicTh'
 
+// Es la tabla con la vista detallada del libro, en ella
+// Pueden leerse sus propiedades
 
 const BookViewTable = () => {
 
