@@ -4,6 +4,9 @@ import BasicThead from '../components/tables/BasicThead'
 import BasicTbody from '../components/tables/BasicTbody'
 import { useTokenStore } from '../store/tokenStore'
 
+// Vista de la página principal de la aplicación.
+// Muestra la tabla que lista los contenidos del usuario.
+
 const Homepage = ({token}) => {
 
   useTokenStore.setState( {name: token.user.user_metadata.name})

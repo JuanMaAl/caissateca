@@ -4,7 +4,9 @@ import BookCard from '../components/BookCard'
 import Header from '../components/Header'
 import {useReadBook} from '../hooks/useReadBook'
 
-
+//Vista de la página del detalle del libro
+// Utiliza la función obtainBookData que llama al hook useReadBook
+// pasándole el id del libro a leer en la BBDD
 
 const BookView = ({token}) => {
 

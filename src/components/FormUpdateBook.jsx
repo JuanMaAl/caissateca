@@ -4,20 +4,21 @@ import { useUpdateBook } from '../hooks/useUpdateBook ';
 import {useNavigate} from 'react-router-dom'
 import { useBookViewStore } from '../store/bookViewStore';
 
-
+//Incluye el formulario para editar un libro y lanza
+// el hook useUpdateBook pasandole los valores pertinentes
 
 export default function FormUpdateBook() {
   let navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    console.log(data);
-    console.log(errors);
+    //console.log(data);
+    //console.log(errors);
     let tituloLibro = data.titulo
     let editorialLibro = data.editorial
     let autorLibro = data.autor
     let temaLibro = data.tema
     let bookId = useBookViewStore.getState().bookId
-    console.log(bookId)
+    //console.log(bookId)
     useUpdateBook(bookId, tituloLibro, editorialLibro, autorLibro, temaLibro)
     navigate('/homepage')
   }

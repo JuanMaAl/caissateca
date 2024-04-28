@@ -4,6 +4,9 @@ import BasicButton from '../components/BasicButton'
 import { useTokenStore } from '../store/tokenStore'
 import { useCollectionStore } from '../store/collectionStore'
 
+//Crea la cabecera de la aplicacición. Incluye botones
+// para volver al Home, Añadir nuevos libros y Salir del usuario
+
 const Header = (props) => {
 
     let navigate = useNavigate()
@@ -16,7 +19,7 @@ const Header = (props) => {
     }
 
     const userName = useTokenStore.getState().name;
-    console.log(userName)
+    //console.log(userName)
 
     function handleHome() {
       navigate('/homepage')

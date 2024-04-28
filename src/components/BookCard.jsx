@@ -4,6 +4,9 @@ import {useNavigate} from 'react-router-dom'
 import { useDeleteBook } from '../hooks/useDeleteBook '
 import { useBookViewStore } from '../store/bookViewStore'
 
+//Tiene la vista en detalle del libro, incluye botones para Editar el libro
+// y para eliminar el libro
+
 function BookCard(props) {
 
   let navigate = useNavigate()

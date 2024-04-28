@@ -4,6 +4,8 @@ import FormPostBook from '../components/FormPostBook'
 import BasicButton from '../components/BasicButton'
 import {useNavigate} from 'react-router-dom'
 
+//Vista de la página para añadir libros, incluye un formulario y un botón
+
 const AddBook = ({token}) => {
 
   return (

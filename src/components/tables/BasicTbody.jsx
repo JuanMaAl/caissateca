@@ -4,6 +4,10 @@ import { useReadCollection } from '../../hooks/useReadCollection'
 import { useCollectionStore } from '../../store/collectionStore'
 import ViewButton from './Buttons/ViewButton'
 
+// Se encarga de devolver el cuerpo de la tabla que contiene todos los 
+// títulos de los libros del usuario y el 
+// botón de vista asociado a los mismos
+
 const BasicTbody = () => {
 
     const [collection, setCollection] = useState([])
@@ -12,7 +16,7 @@ const BasicTbody = () => {
       async function obtainCollectData() {
         await useReadCollection()
         const collectionData = useCollectionStore.getState().collection
-        console.log(collectionData)
+        //console.log(collectionData)
         setCollection(collectionData)
       }
       obtainCollectData()
