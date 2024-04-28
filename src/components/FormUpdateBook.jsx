@@ -10,7 +10,7 @@ import { useBookViewStore } from '../store/bookViewStore';
 export default function FormUpdateBook() {
   let navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {
+  const onSubmit = async(data) => {
     //console.log(data);
     //console.log(errors);
     let tituloLibro = data.titulo
@@ -19,7 +19,7 @@ export default function FormUpdateBook() {
     let temaLibro = data.tema
     let bookId = useBookViewStore.getState().bookId
     //console.log(bookId)
-    useUpdateBook(bookId, tituloLibro, editorialLibro, autorLibro, temaLibro)
+    await useUpdateBook(bookId, tituloLibro, editorialLibro, autorLibro, temaLibro)
     navigate('/homepage')
   }
 
