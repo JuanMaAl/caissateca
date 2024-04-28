@@ -1,8 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
 import FormPostBook from '../components/FormPostBook'
-import BasicButton from '../components/BasicButton'
-import {useNavigate} from 'react-router-dom'
 
 //Vista de la página para añadir libros, incluye un formulario y un botón
 

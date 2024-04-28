@@ -17,7 +17,7 @@ function BookCard(props) {
 
   async function deleteBook() {
     const bookId = useBookViewStore.getState().bookId
-    useDeleteBook(bookId)
+    await useDeleteBook(bookId)
     navigate("/homepage")
     }
 

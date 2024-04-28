@@ -9,14 +9,14 @@ import {useNavigate} from 'react-router-dom'
 export default function FormPostBook() {
   let navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {
+  const onSubmit = async (data) => {
     //console.log(data);
     //console.log(errors);
     let tituloLibro = data.titulo
     let editorialLibro = data.editorial
     let autorLibro = data.autor
     let temaLibro = data.tema
-    useCreateBook(tituloLibro, editorialLibro, autorLibro, temaLibro)
+    await useCreateBook(tituloLibro, editorialLibro, autorLibro, temaLibro)
     navigate('/homepage')
   }
 
