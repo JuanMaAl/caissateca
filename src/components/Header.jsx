@@ -18,7 +18,12 @@ const Header = (props) => {
       navigate('/')
     }
 
-    const userName = useTokenStore.getState().name;
+    let userName = useTokenStore.getState().name;
+
+    if (!userName) {
+      userName = "Cody"
+    } 
+
     //console.log(userName)
 
     function handleHome() {

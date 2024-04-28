@@ -43,7 +43,7 @@ const FormSignUp = () => {
             throw (error)
           } else {
               alert('Compruebe su correo electrónico. Tiene que haber recibido un enlace de verificación')
-              navigate('/login')
+              navigate('/')
             }
         } catch (error) {
             alert(error)
