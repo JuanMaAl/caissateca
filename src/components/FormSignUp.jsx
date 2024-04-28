@@ -9,7 +9,7 @@ import {useNavigate} from 'react-router-dom'
 // Incluye el formulario de registro y las funciones necesarias para enviar
 // los datos de registro a la BBDD (supabase)
 
-const FormLogin = () => {
+const FormSignUp = () => {
 
   let navigate = useNavigate()
 
@@ -85,4 +85,4 @@ const FormLogin = () => {
   )
 }
 
-export default FormLogin
+export default FormSignUp
