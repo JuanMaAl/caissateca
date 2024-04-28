@@ -10,9 +10,8 @@ const Login = ({setToken}) => {
     <div className="grid justify-items-center pt-20 h-full">
       
       <FormLogin setToken={setToken}/>
-      <footer className="text-pink-500 font-bold flex justify-around space-x-1">
-         Caissateca <div className='mt-1.5 mx-0.5'>{copyLeft} </div> - 
-      Proyecto de aprendizaje por Juan Martínez Alonso
+      <footer className="text-pink-500 font-bold flex justify-center space-x-1">
+         Caissateca <div className='mt-1.5 mx-0.5'>{copyLeft} </div> 2024
       </footer>
 
     </div>
