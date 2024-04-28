@@ -24,11 +24,11 @@ export default function FormPostBook() {
     <form onSubmit={handleSubmit(onSubmit)} 
     className="max-w-sm bg-pink-200 border border-gray-200 rounded-lg shadow mt-10 px-3">
       <h3 className="p-2 text-2xl text-pink-800 font-extrabold underline">Formulario: Nuevo Libro</h3>
-      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="titulo" {...register("titulo", {required: true, min: 4, maxLength: 32})} />
+      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="titulo" {...register("titulo", {required: true, min: 4, maxLength: 64})} />
       <br />
-      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="editorial" {...register("editorial", {required: true, min: 4, maxLength: 32})} />
+      <input className="px-2 mt-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="editorial" {...register("editorial", {required: true, min: 4, maxLength: 64})} />
       <br />
-      <input className="px-2 my-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="autor" {...register("autor", {required: true, min: 4, maxLength: 32})} />
+      <input className="px-2 my-3 bg-white rounded-md text-pink-800 focus:placeholder-pink-400" type="text" placeholder="autor" {...register("autor", {required: true, min: 4, maxLength: 64})} />
       <br />
       <select {...register("tema", { required: true })}>
         <option value="Aperturas">Aperturas</option>
